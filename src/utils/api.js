@@ -1,5 +1,5 @@
 const tokenHeaders = new Headers();
-tokenHeaders.append('Authorization', 'token 85c34446c9e505b0fdf6287c434e966525d83d34');
+tokenHeaders.append('Authorization', 'token <ADD_YOUR_GITHUB_TOKEN>');
 
 const api = {
   getBio(username) {
@@ -9,7 +9,7 @@ const api = {
   },
   getRepos(username) {
     username = username.toLowerCase().trim()
-    const url = `https://api.github.com/users/${username}/repos?token=85c34446c9e505b0fdf6287c434e966525d83d34`
+    const url = `https://api.github.com/users/${username}/repos`
     return fetch(url, {headers: tokenHeaders}).then((res) => res.json());
   },
   getNotes(username) {
